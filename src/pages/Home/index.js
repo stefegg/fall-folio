@@ -1,5 +1,11 @@
+import React, { useEffect, useState } from "react";
+import { useTheme } from "styled-components";
+import { Wrapper } from "./styles";
+
 const Home = () => {
-  return <div>'Hi'</div>;
+  const theme = useTheme();
+
+  return <Wrapper>'Hi'</Wrapper>;
 };
 
 export default Home;
