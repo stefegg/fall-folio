@@ -1,4 +1,16 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const hop = keyframes`
+  0% {
+    margin-bottom: 0px;
+  }
+  50% {
+    margin-bottom: 10px;
+  }
+  100% {
+    margin-bottom: 0px;
+  }
+`;
 
 export const Wrapper = styled.div`
   display: flex;
@@ -40,5 +52,6 @@ export const Icon = styled.img`
     transform: rotate(30deg);
     transition-property: filter, transform;
     transition-duration: 2s, 1s;
+    animation: 1s ${hop} ease-out;
   }
 `;
