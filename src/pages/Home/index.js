@@ -6,11 +6,7 @@ import { NavTop } from "../../components";
 const Home = () => {
   const theme = useTheme();
 
-  return (
-    <Wrapper>
-      <NavTop></NavTop>
-    </Wrapper>
-  );
+  return <Wrapper></Wrapper>;
 };
 
 export default Home;
