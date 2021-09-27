@@ -10,9 +10,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
-.plus:hover {
-  filter: invert(61%) sepia(52%) saturate(485%) hue-rotate(6deg) brightness(96%)
-    contrast(98%);
-  transition: filter 1s;
-}

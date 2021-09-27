@@ -22,6 +22,14 @@ export const HeadIcon = styled.img`
   width: 32px;
   border-radius: 50px;
   cursor: pointer;
+  transition: 1s;
+  &:hover {
+    filter: invert(61%) sepia(52%) saturate(485%) hue-rotate(6deg)
+      brightness(96%) contrast(98%);
+    transform: rotate(45deg);
+    transition-property: filter, transform;
+    transition-duration: 2s, 1s;
+  }
 `;
 
 export const Body = styled.div`
