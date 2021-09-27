@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  height: 100vh;
-  background: ${({ theme }) => theme.colors.charcoal};
+  width: 100%;
+  height: 60px;
+  color: ${({ theme }) => theme.colors.gold};
 `;

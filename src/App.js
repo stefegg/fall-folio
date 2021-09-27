@@ -6,7 +6,7 @@ import theme from "./Style";
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <Home />;
+      <Home />
     </ThemeProvider>
   );
 }

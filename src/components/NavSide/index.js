@@ -1,16 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useTheme } from "styled-components";
 import { Wrapper } from "./styles";
-import { NavTop } from "../../components";
 
-const Home = () => {
+const NavSide = () => {
   const theme = useTheme();
-
-  return (
-    <Wrapper>
-      <NavTop></NavTop>
-    </Wrapper>
-  );
+  return <Wrapper>Test</Wrapper>;
 };
 
-export default Home;
+export default NavSide;
