@@ -1,3 +1,6 @@
+import plusIcon from "./icons/plus.svg";
+import settingsIcon from "./icons/setting.svg";
+
 const COLORS = {
   jet: "#363636",
   charcoal: "#33435B",
@@ -11,6 +14,12 @@ const COLORS = {
   shamrock: "#4C9F70",
 };
 
+const ICONS = {
+  plusIcon,
+  settingsIcon,
+};
+
 export default {
   colors: COLORS,
+  icons: ICONS,
 };

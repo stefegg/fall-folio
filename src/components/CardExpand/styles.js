@@ -17,12 +17,24 @@ export const HeadText = styled.p`
   color: ${({ theme }) => theme.colors.plat};
 `;
 
-export const HeadIcon = styled.div`
+export const HeadIcon = styled.img`
   height: 32px;
   width: 32px;
-  background: ${({ theme }) => theme.colors.plat};
   border-radius: 50px;
   cursor: pointer;
+  transition: 1s;
+  filter: ${(props) =>
+    props.expand
+      ? "invert(61%) sepia(52%) saturate(485%) hue-rotate(6deg) brightness(96%) contrast(98%)"
+      : "none"};
+  transform: ${(props) => (props.expand ? "rotate(45deg)" : "none")};
+  &:hover {
+    filter: invert(61%) sepia(52%) saturate(485%) hue-rotate(6deg)
+      brightness(96%) contrast(98%);
+    transform: rotate(45deg);
+    transition-property: filter, transform;
+    transition-duration: 2s, 1s;
+  }
 `;
 
 export const Body = styled.div`

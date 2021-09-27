@@ -8,7 +8,7 @@ const NavTop = () => {
     <Wrapper>
       <HeaderOne>Stef Egbert</HeaderOne>
       <SubHeader>Software Developer</SubHeader>
-      <Icon />
+      <Icon src={theme.icons.settingsIcon} />
     </Wrapper>
   );
 };
