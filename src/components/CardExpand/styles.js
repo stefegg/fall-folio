@@ -23,6 +23,11 @@ export const HeadIcon = styled.img`
   border-radius: 50px;
   cursor: pointer;
   transition: 1s;
+  filter: ${(props) =>
+    props.expand
+      ? "invert(61%) sepia(52%) saturate(485%) hue-rotate(6deg) brightness(96%) contrast(98%)"
+      : "none"};
+  transform: ${(props) => (props.expand ? "rotate(45deg)" : "none")};
   &:hover {
     filter: invert(61%) sepia(52%) saturate(485%) hue-rotate(6deg)
       brightness(96%) contrast(98%);

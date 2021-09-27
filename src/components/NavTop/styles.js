@@ -26,12 +26,19 @@ export const SubHeader = styled.p`
   margin: 0px;
 `;
 
-export const Icon = styled.p`
-  min-height: 32px;
-  min-width: 32px;
-  background-color: ${({ theme }) => theme.colors.gold};
+export const Icon = styled.img`
+  height: 32px;
+  width: 32px;
   border-radius: 50%;
   position: absolute;
   right: 40px;
   cursor: pointer;
+  transition: 1s;
+  &:hover {
+    filter: invert(61%) sepia(52%) saturate(485%) hue-rotate(6deg)
+      brightness(96%) contrast(98%);
+    transform: rotate(30deg);
+    transition-property: filter, transform;
+    transition-duration: 2s, 1s;
+  }
 `;
