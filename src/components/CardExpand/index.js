@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useTheme } from "styled-components";
 import { Wrapper, Header, Body, HeadText, HeadIcon, BodyText } from "./styles";
+import "../../index.css";
 
 const CardExpand = ({ title, body }) => {
   const theme = useTheme();
@@ -9,7 +10,11 @@ const CardExpand = ({ title, body }) => {
     <Wrapper>
       <Header>
         <HeadText>{title}</HeadText>
-        <HeadIcon onClick={() => setExpand(!expand)}></HeadIcon>
+        <HeadIcon
+          onClick={() => setExpand(!expand)}
+          src={theme.icons.plusIcon}
+          className={"plus"}
+        />
       </Header>
       <Body expand={expand}>
         <BodyText expand={expand}>{body}</BodyText>

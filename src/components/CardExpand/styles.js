@@ -17,10 +17,9 @@ export const HeadText = styled.p`
   color: ${({ theme }) => theme.colors.plat};
 `;
 
-export const HeadIcon = styled.div`
+export const HeadIcon = styled.img`
   height: 32px;
   width: 32px;
-  background: ${({ theme }) => theme.colors.plat};
   border-radius: 50px;
   cursor: pointer;
 `;
