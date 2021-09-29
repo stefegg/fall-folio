@@ -31,6 +31,18 @@ export const CatHeader = styled.div`
   height: ${(props) => (props.sideBarWidth !== "40px" ? "24px" : "0px")};
   transition: height 0.5s;
   overflow: hidden;
+  cursor: pointer;
 `;
 
-export const CatExpand = styled.div``;
+export const CatExpand = styled.div`
+  width: 100%;
+  height: ${(props) =>
+    props.expand === props.catId ? `${props.subLength * "18"}px` : "0px"};
+  overflow: hidden;
+  transition: height 1s;
+`;
+
+export const SubCatHead = styled.div`
+  background: blue;
+  width: 100%;
+`;
