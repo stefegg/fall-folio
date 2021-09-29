@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   width: 100%;
+  background: red;
 `;
 
 export const Header = styled.div`
@@ -9,6 +10,7 @@ export const Header = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  background: blue;
 `;
 
 export const HeadText = styled.p`
@@ -41,6 +43,7 @@ export const Body = styled.div`
   height: ${(props) => (props.expand ? "100px" : "0px")};
   transition: height 1.5s;
   overflow: hidden;
+  background: green;
 `;
 
 export const BodyText = styled.p`

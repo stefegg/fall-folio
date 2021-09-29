@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useTheme } from "styled-components";
-import { Wrapper, Icon } from "./styles";
+import { Wrapper, Icon, CatWrapper, CatHeader } from "./styles";
 import { useRecoilState } from "recoil";
 import atoms from "../../atoms";
 
@@ -13,10 +13,19 @@ const NavSide = () => {
     } else setSideBarWidth("200px");
   };
 
+  const categories = [
+    { id: 0, title: "About" },
+    { id: 1, title: "Components" },
+  ];
+
   return (
     <Wrapper>
-      <Icon onClick={() => sideBarClick()} />
-      Test
+      <CatWrapper sideBarWidth={sideBarWidth}>
+        {categories.map((cat) => (
+          <CatHeader sideBarWidth={sideBarWidth}>{cat.title}</CatHeader>
+        ))}
+      </CatWrapper>
+      <Icon sideBarWidth={sideBarWidth} onClick={() => sideBarClick()} />
     </Wrapper>
   );
 };

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  height: 100vh;
-  padding: 40px 60px;
+  height: calc(100vh - 140px);
   background: ${({ theme }) => theme.colors.jet};
+  padding: 40px 80px 0px 60px;
 `;

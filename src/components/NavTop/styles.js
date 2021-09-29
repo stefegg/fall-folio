@@ -16,13 +16,12 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   max-width: 100%;
-  height: 60px;
+  height: 100px;
   color: ${({ theme }) => theme.colors.gold};
-  padding: 30px 20px;
+  padding: 0px 20px;
   background: ${({ theme }) => theme.colors.indy};
   align-items: flex-start;
   justify-content: center;
-  border-bottom: ${({ theme }) => `1px solid ${theme.colors.plat}`};
   overflow: hidden;
   position: relative;
 `;
