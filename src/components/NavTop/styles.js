@@ -2,13 +2,13 @@ import styled, { keyframes } from "styled-components";
 
 const hop = keyframes`
   0% {
-    margin-bottom: 0px;
+    padding-bottom: 0px;
   }
   50% {
-    margin-bottom: 10px;
+    padding-bottom: 10px;
   }
   100% {
-    margin-bottom: 0px;
+    padding-bottom: 0px;
   }
 `;
 
