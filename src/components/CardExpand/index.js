@@ -14,7 +14,6 @@ const CardExpand = ({ title, body }) => {
           expand={expand}
           onClick={() => setExpand(!expand)}
           src={theme.icons.plusIcon}
-          // className={"plus"}
         />
       </Header>
       <Body expand={expand}>
