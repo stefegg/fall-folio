@@ -11,6 +11,7 @@ export const Header = styled.div`
   align-items: center;
   justify-content: space-between;
   background: blue;
+  padding: 0px 12px;
 `;
 
 export const HeadText = styled.p`
@@ -40,15 +41,17 @@ export const HeadIcon = styled.img`
 
 export const Body = styled.div`
   color: ${({ theme }) => theme.colors.plat};
-  height: ${(props) => (props.expand ? "100px" : "0px")};
+  height: ${(props) => (props.expand ? "250px" : "0px")};
   transition: height 1.5s;
-  overflow: hidden;
+  overflow: scroll;
   background: green;
 `;
 
 export const BodyText = styled.p`
+  padding: 12px;
+
   margin: 0px;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 500;
   color: ${(props) =>
     props.expand ? props.theme.colors.plat : props.theme.colors.jet};

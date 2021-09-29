@@ -21,28 +21,30 @@ export const Icon = styled.div`
 
 export const CatWrapper = styled.div`
   width: ${(props) => (props.sideBarWidth !== "40px" ? "100%" : "0%")};
-  background: green;
   transition: width 1s;
 `;
 
 export const CatHeader = styled.div`
   display: flex;
   align-items: center;
-  height: ${(props) => (props.sideBarWidth !== "40px" ? "24px" : "0px")};
+  height: ${(props) => (props.sideBarWidth !== "40px" ? "32px" : "0px")};
   transition: height 0.5s;
   overflow: hidden;
   cursor: pointer;
+  font-size: 20px;
 `;
 
 export const CatExpand = styled.div`
   width: 100%;
   height: ${(props) =>
-    props.expand === props.catId ? `${props.subLength * "18"}px` : "0px"};
+    props.expand === props.catId ? `${props.subLength * "20"}px` : "0px"};
   overflow: hidden;
-  transition: height 1s;
+  transition: height 0.5s;
 `;
 
 export const SubCatHead = styled.div`
-  background: blue;
   width: 100%;
+  margin-bottom: 4px;
+  padding-left: 8px;
+  cursor: pointer;
 `;

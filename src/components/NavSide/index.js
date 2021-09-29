@@ -10,18 +10,23 @@ import {
 } from "./styles";
 import { useRecoilState } from "recoil";
 import atoms from "../../atoms";
+import { useHistory } from "react-router-dom";
 
 const NavSide = () => {
   const theme = useTheme();
+  const history = useHistory();
   const [sideBarWidth, setSideBarWidth] = useRecoilState(atoms.sideBarWidth);
   const [expand, setExpand] = useState(null);
+  const [displayComponent, setDisplayComponent] = useRecoilState(
+    atoms.displayComponent
+  );
   const sideBarClick = () => {
     if (sideBarWidth === "200px") {
       setSideBarWidth("40px");
     } else setSideBarWidth("200px");
   };
 
-  const clickSubCat = (id) => {
+  const clickCat = (id) => {
     if (expand === id) {
       setExpand(null);
     } else setExpand(id);
@@ -32,19 +37,26 @@ const NavSide = () => {
       id: 0,
       title: "About",
       subcategories: [
-        { id: 0, title: "Bio" },
-        { id: 1, title: "Resume" },
+        { id: 0, title: "Bio", onClick: () => history.push("/bio") },
+        { id: 1, title: "Resume", onClick: () => history.push("/resume") },
       ],
-      onClick: () => clickSubCat(0),
+      onClick: () => clickCat(0),
     },
     {
       id: 1,
       title: "Bits",
       subcategories: [
-        { id: 0, title: "Component 1" },
+        {
+          id: 0,
+          title: "Expanding Card",
+          onClick: () => {
+            history.push("/");
+            setDisplayComponent("cardExpand");
+          },
+        },
         { id: 1, title: "Component 2" },
       ],
-      onClick: () => clickSubCat(1),
+      onClick: () => clickCat(1),
     },
   ];
 
@@ -59,7 +71,6 @@ const NavSide = () => {
             >
               {cat.title}
             </CatHeader>
-            {/* {expand === cat.id && ( */}
             <CatExpand
               expand={expand}
               catId={cat.id}
@@ -67,10 +78,9 @@ const NavSide = () => {
             >
               {cat.subcategories &&
                 cat.subcategories.map((sub) => (
-                  <SubCatHead>{sub.title}</SubCatHead>
+                  <SubCatHead onClick={sub.onClick}>{sub.title}</SubCatHead>
                 ))}
             </CatExpand>
-            {/* )} */}
           </>
         ))}
       </CatWrapper>
