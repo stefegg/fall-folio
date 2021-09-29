@@ -6,10 +6,9 @@ import { Wrapper, InnerWrapper } from "./styles";
 
 const ModalSite = () => {
   const theme = useTheme();
-  const [showSiteModal] = useRecoilState(atoms.displayComponent);
+  const [showSiteModal] = useRecoilState(atoms.showSiteModal);
   return (
     <>
-      {" "}
       {showSiteModal ? (
         <Wrapper>
           <InnerWrapper>{showSiteModal}</InnerWrapper>

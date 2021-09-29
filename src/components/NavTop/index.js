@@ -7,9 +7,7 @@ import atoms from "../../atoms";
 
 const NavTop = () => {
   const theme = useTheme();
-  const [showSiteModal, setShowSiteModal] = useRecoilState(
-    atoms.displayComponent
-  );
+  const [showSiteModal, setShowSiteModal] = useRecoilState(atoms.showSiteModal);
   return (
     <Wrapper>
       <HeaderOne>Stef Egbert</HeaderOne>
