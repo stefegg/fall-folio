@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import { pubRoutes } from "./routes";
-import { NavTop, NavSide } from "../components";
+import { NavTop, NavSide, ModalSite } from "../components";
 import { Wrapper, SideTrack, PageTrack } from "./styles";
 import atoms from "../atoms";
 import { useRecoilState } from "recoil";
@@ -26,6 +26,7 @@ const Navigation = () => {
           </Switch>
         </PageTrack>
       </Wrapper>
+      <ModalSite />
     </>
   );
 };

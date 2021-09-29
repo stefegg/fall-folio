@@ -9,4 +9,12 @@ export default {
     key: "displayComponent",
     default: null,
   }),
+  showSiteModal: atom({
+    key: "showSiteModal",
+    default: null,
+  }),
+  showSlideModal: atom({
+    key: "showSlideModal",
+    default: false,
+  }),
 };
