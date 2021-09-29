@@ -6,14 +6,11 @@ export const Wrapper = styled.div`
   width: 100vw;
   height: 100vh;
   top: 0;
-  background: gray;
-  opacity: 0.5;
+  background: rgba(33, 33, 33, 0.5);
+
   display: flex;
   align-items: center;
   justify-content: center;
 `;
 
-export const InnerWrapper = styled.div`
-  opacity: 1;
-  z-index: 2;
-`;
+export const InnerWrapper = styled.div``;

@@ -37,8 +37,8 @@ const NavSide = () => {
       id: 0,
       title: "About",
       subcategories: [
-        { id: 0, title: "Bio", onClick: () => history.push("/bio") },
-        { id: 1, title: "Resume", onClick: () => history.push("/resume") },
+        { id: "0-1", title: "Bio", onClick: () => history.push("/bio") },
+        { id: "0-2", title: "Resume", onClick: () => history.push("/resume") },
       ],
       onClick: () => clickCat(0),
     },
@@ -47,14 +47,14 @@ const NavSide = () => {
       title: "Bits",
       subcategories: [
         {
-          id: 0,
+          id: "1-0",
           title: "Expanding Card",
           onClick: () => {
             history.push("/");
             setDisplayComponent("cardExpand");
           },
         },
-        { id: 1, title: "Component 2" },
+        { id: "1-1", title: "Component 2" },
       ],
       onClick: () => clickCat(1),
     },
@@ -68,6 +68,7 @@ const NavSide = () => {
             <CatHeader
               onClick={() => cat.onClick()}
               sideBarWidth={sideBarWidth}
+              key={cat.id}
             >
               {cat.title}
             </CatHeader>
@@ -78,7 +79,9 @@ const NavSide = () => {
             >
               {cat.subcategories &&
                 cat.subcategories.map((sub) => (
-                  <SubCatHead onClick={sub.onClick}>{sub.title}</SubCatHead>
+                  <SubCatHead key={sub.id} onClick={sub.onClick}>
+                    {sub.title}
+                  </SubCatHead>
                 ))}
             </CatExpand>
           </>

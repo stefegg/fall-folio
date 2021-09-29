@@ -6,6 +6,7 @@ export const Wrapper = styled.div`
   background: blue;
   border-radius: 8px;
   position: relative;
+  opacity: 1;
 `;
 
 export const Icon = styled.div`
