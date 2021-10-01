@@ -20,7 +20,6 @@ const NavSide = () => {
   const [displayComponent, setDisplayComponent] = useRecoilState(
     atoms.displayComponent
   );
-  const [colorTheme] = useRecoilState(atoms.colorTheme);
 
   const sideBarClick = () => {
     if (sideBarWidth === "200px") {
@@ -63,7 +62,7 @@ const NavSide = () => {
   ];
 
   return (
-    <Wrapper colorTheme={colorTheme}>
+    <Wrapper>
       <CatWrapper sideBarWidth={sideBarWidth}>
         {categories.map((cat) => (
           <>
@@ -81,11 +80,7 @@ const NavSide = () => {
             >
               {cat.subcategories &&
                 cat.subcategories.map((sub) => (
-                  <SubCatHead
-                    colorTheme={colorTheme}
-                    key={sub.id}
-                    onClick={sub.onClick}
-                  >
+                  <SubCatHead key={sub.id} onClick={sub.onClick}>
                     {sub.title}
                   </SubCatHead>
                 ))}

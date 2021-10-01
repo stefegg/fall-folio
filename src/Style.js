@@ -1,7 +1,6 @@
+import { CatHeader } from "./components/NavSide/styles";
 import plusIcon from "./icons/plus.svg";
 import settingsIcon from "./icons/setting.svg";
-import atoms from "./atoms";
-import { useRecoilState } from "recoil";
 
 const COLORS = {
   jet: "#363636",
@@ -18,29 +17,33 @@ const COLORS = {
   steel: "#4F7CAC",
 };
 
-const DARK_COLORS = {
-  primary_bg: "#363636",
-  secondary_bg: "#33435B",
-  text: "#CCA43B",
-  border: "#49516F",
-};
-
-const BLUE_COLORS = {
-  primary_bg: "#90A9B7",
-  secondary_bg: "#4F7CAC",
-  text: "black",
-  secondary_text: "#CCA43B",
-  border: "#363636",
-};
-
 const ICONS = {
   plusIcon,
   settingsIcon,
 };
 
-export default {
-  colors: COLORS,
-  blueColors: BLUE_COLORS,
-  darkColors: DARK_COLORS,
-  icons: ICONS,
+export const darkTheme = {
+  primary_bg: "#363636",
+  secondary_bg: "#33435B",
+  text: "#CCA43B",
+  border: "#49516F",
+  colors: { ...COLORS },
+  icons: {
+    ...ICONS,
+  },
+};
+
+export const blueTheme = {
+  primary_bg: "#90A9B7",
+  secondary_bg: "#4F7CAC",
+  text: "black",
+  secondary_text: "#CCA43B",
+  border: "#363636",
+  filter:
+    "invert(61%) sepia(52%) saturate(485%) hue-rotate(6deg) brightness(96%) contrast(98%)",
+  colors: { ...COLORS },
+
+  icons: {
+    ...ICONS,
+  },
 };
