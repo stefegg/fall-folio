@@ -16,14 +16,16 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   max-width: 100%;
-  height: 100px;
-  color: ${({ theme }) => theme.colors.gold};
+  height: 99px;
+  color: ${(props) => props.theme[`${props.colorTheme}`].text};
   padding: 0px 20px;
-  background: ${({ theme }) => theme.colors.indy};
   align-items: flex-start;
+  background: ${(props) => props.theme[`${props.colorTheme}`].secondary_bg};
   justify-content: center;
   overflow: hidden;
   position: relative;
+  border-bottom: 1px solid
+    ${(props) => props.theme[`${props.colorTheme}`].border};
 `;
 
 export const HeaderOne = styled.h1`

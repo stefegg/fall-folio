@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   height: calc(100vh - 140px);
-  background: red;
-  color: ${({ theme }) => theme.colors.gold};
+  color: ${(props) => props.theme[`${props.colorTheme}`].text};
+  background: ${(props) => props.theme[`${props.colorTheme}`].secondary_bg};
   padding: 20px;
   position: relative;
 `;
@@ -47,4 +47,5 @@ export const SubCatHead = styled.div`
   margin-bottom: 4px;
   padding-left: 8px;
   cursor: pointer;
+  color: ${(props) => props.theme[`${props.colorTheme}`].secondary_text};
 `;
