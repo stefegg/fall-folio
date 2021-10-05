@@ -16,7 +16,7 @@ const Navigation = () => {
         <SideTrack sideBarWidth={sideBarWidth}>
           <NavSide />
         </SideTrack>
-        <PageTrack>
+        <PageTrack sideBarWidth={sideBarWidth}>
           <Switch>
             {pubRoutes.map(({ path, Page, exact }) => (
               <Route key={path} path={path} exact={exact}>

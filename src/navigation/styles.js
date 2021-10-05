@@ -11,5 +11,5 @@ export const SideTrack = styled.div`
 `;
 
 export const PageTrack = styled.div`
-  width: 100%;
+  width: ${(props) => `calc(100vw - ${props.sideBarWidth})`};
 `;
