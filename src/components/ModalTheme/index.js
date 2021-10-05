@@ -18,7 +18,7 @@ const ModalTheme = () => {
         />
       </Header>
       <Body>
-        <Button text={"Light Theme"} />
+        {/* <Button text={"Light Theme"} /> */}
         <Button
           text={"Blue Theme"}
           onClick={() => {
@@ -27,6 +27,7 @@ const ModalTheme = () => {
           textColor={"black"}
           backgroundColor={theme.colors.steel}
           border={`1px solid ${theme.colors.gold}`}
+          width={"75%"}
         />
         <Button
           text={"Dark Theme"}
@@ -36,6 +37,7 @@ const ModalTheme = () => {
           border={`1px solid ${theme.colors.white}`}
           textColor={theme.colors.gold}
           backgroundColor={theme.colors.charcoal}
+          width={"75%"}
         />
       </Body>
     </Wrapper>

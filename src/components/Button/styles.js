@@ -4,8 +4,8 @@ export const Wrapper = styled.button`
   width: ${({ width }) => (width ? width : "100px")};
   height: ${({ height }) => (height ? height : "40px")};
   color: ${({ textColor, theme }) => (textColor ? textColor : theme.text)};
-  background: ${({ backgroundColor }) =>
-    backgroundColor ? backgroundColor : "blue"};
+  background: ${({ backgroundColor, theme }) =>
+    backgroundColor ? backgroundColor : theme.secondaryBg};
   outline: none;
   text-decoration: none;
   display: flex;
@@ -19,5 +19,8 @@ export const Wrapper = styled.button`
   }
   &:active {
     opacity: 0.9;
+  }
+  &:disabled {
+    opacity: 1;
   }
 `;

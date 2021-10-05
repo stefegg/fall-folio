@@ -9,7 +9,7 @@ export const Header = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background: ${({ theme }) => theme.colors.plat};
+  background: ${({ theme }) => theme.border};
   padding: 0px 12px;
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
@@ -53,7 +53,7 @@ export const BodyText = styled.p`
   font-size: 18px;
   font-weight: 500;
   color: ${(props) =>
-    !props.expand ? props.theme.secondaryBg : props.theme.primaryBg};
+    !props.expand ? props.theme.secondaryBg : props.theme.text};
   transition: color 1.5s;
   transition-delay: 0.25s;
 `;

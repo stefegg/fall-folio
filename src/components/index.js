@@ -5,6 +5,8 @@ import DisplayComponent from "./DisplayComponent";
 import ModalSite from "./ModalSite";
 import ModalTheme from "./ModalTheme";
 import Button from "./Button";
+import CarouselRow from "./CarouselRow";
+import CarouselCard from "./CarouselCard";
 
 export {
   NavTop,
@@ -14,4 +16,6 @@ export {
   ModalSite,
   ModalTheme,
   Button,
+  CarouselRow,
+  CarouselCard,
 };

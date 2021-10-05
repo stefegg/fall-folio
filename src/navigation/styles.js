@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
 `;
 
 export const SideTrack = styled.div`
-  width: ${(props) => props.sideBarWidth};
+  min-width: ${(props) => props.sideBarWidth};
   transition: width, 0.5s;
 `;
 
