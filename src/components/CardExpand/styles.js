@@ -41,7 +41,7 @@ export const HeadIcon = styled.img`
 `;
 
 export const Body = styled.div`
-  background: ${({ theme }) => theme.secondary_bg};
+  background: ${({ theme }) => theme.secondaryBg};
   height: ${({ expand }) => (expand ? "250px" : "0px")};
   transition: height 1.5s;
   overflow: scroll;
@@ -53,7 +53,7 @@ export const BodyText = styled.p`
   font-size: 18px;
   font-weight: 500;
   color: ${(props) =>
-    !props.expand ? props.theme.secondary_bg : props.theme.primary_bg};
+    !props.expand ? props.theme.secondaryBg : props.theme.primaryBg};
   transition: color 1.5s;
   transition-delay: 0.25s;
 `;

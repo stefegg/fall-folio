@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Wrapper } from "./styles";
-import { DisplayComponent } from "../../components";
+import { DisplayComponent, Button } from "../../components";
 
 const Home = () => {
   return (

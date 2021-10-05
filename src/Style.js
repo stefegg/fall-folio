@@ -15,6 +15,7 @@ const COLORS = {
   shamrock: "#4C9F70",
   ainge: "#FF5400",
   steel: "#4F7CAC",
+  peri: "#90A9B7",
 };
 
 const ICONS = {
@@ -23,10 +24,13 @@ const ICONS = {
 };
 
 export const darkTheme = {
-  primary_bg: "#363636",
-  secondary_bg: "#33435B",
+  primaryBg: "#363636",
+  secondaryBg: "#33435B",
   text: "#CCA43B",
+  secondaryText: "white",
   border: "#49516F",
+  filter:
+    "invert(61%) sepia(52%) saturate(485%) hue-rotate(6deg) brightness(96%) contrast(98%)",
   colors: { ...COLORS },
   icons: {
     ...ICONS,
@@ -34,10 +38,10 @@ export const darkTheme = {
 };
 
 export const blueTheme = {
-  primary_bg: "#90A9B7",
-  secondary_bg: "#4F7CAC",
+  primaryBg: "#90A9B7",
+  secondaryBg: "#4F7CAC",
   text: "black",
-  secondary_text: "#CCA43B",
+  secondaryText: "#CCA43B",
   border: "#363636",
   filter:
     "invert(61%) sepia(52%) saturate(485%) hue-rotate(6deg) brightness(96%) contrast(98%)",

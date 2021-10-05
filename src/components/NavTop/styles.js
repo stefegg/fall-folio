@@ -20,7 +20,7 @@ export const Wrapper = styled.div`
   color: ${({ theme }) => theme.text};
   padding: 0px 20px;
   align-items: flex-start;
-  background: ${({ theme }) => theme.secondary_bg};
+  background: ${({ theme }) => theme.secondaryBg};
   justify-content: center;
   overflow: hidden;
   position: relative;

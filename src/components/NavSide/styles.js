@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
   height: calc(100vh - 140px);
   color: ${({ theme }) => theme.text};
-  background: ${({ theme }) => theme.secondary_bg};
+  background: ${({ theme }) => theme.secondaryBg};
   padding: 20px;
   position: relative;
 `;
@@ -47,5 +47,5 @@ export const SubCatHead = styled.div`
   margin-bottom: 4px;
   padding-left: 8px;
   cursor: pointer;
-  color: ${({ theme }) => theme.secondary_text};
+  color: ${({ theme }) => theme.secondaryText};
 `;
