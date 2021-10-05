@@ -17,4 +17,8 @@ export default {
     key: "showSlideModal",
     default: false,
   }),
+  colorTheme: atom({
+    key: "colorTheme",
+    default: "blueColors",
+  }),
 };

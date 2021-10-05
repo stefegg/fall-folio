@@ -2,10 +2,11 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   height: calc(100vh - 140px);
-  background: red;
-  color: ${({ theme }) => theme.colors.gold};
+  color: ${({ theme }) => theme.text};
+  background: ${({ theme }) => theme.secondaryBg};
   padding: 20px;
   position: relative;
+  border-right: 1px solid ${({ theme }) => theme.border};
 `;
 
 export const Icon = styled.div`
@@ -47,4 +48,5 @@ export const SubCatHead = styled.div`
   margin-bottom: 4px;
   padding-left: 8px;
   cursor: pointer;
+  color: ${({ theme }) => theme.secondaryText};
 `;

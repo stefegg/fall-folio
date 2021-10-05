@@ -16,14 +16,15 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   max-width: 100%;
-  height: 100px;
-  color: ${({ theme }) => theme.colors.gold};
+  height: 99px;
+  color: ${({ theme }) => theme.text};
   padding: 0px 20px;
-  background: ${({ theme }) => theme.colors.indy};
   align-items: flex-start;
+  background: ${({ theme }) => theme.secondaryBg};
   justify-content: center;
   overflow: hidden;
   position: relative;
+  border-bottom: 1px solid ${({ theme }) => theme.border};
 `;
 
 export const HeaderOne = styled.h1`
@@ -46,8 +47,7 @@ export const Icon = styled.img`
   cursor: pointer;
   transition: 1s;
   &:hover {
-    filter: invert(61%) sepia(52%) saturate(485%) hue-rotate(6deg)
-      brightness(96%) contrast(98%);
+    filter: ${({ theme }) => theme.filter};
     transform: rotate(30deg);
     transition-property: filter, transform;
     transition-duration: 2s, 1s;

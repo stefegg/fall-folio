@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
+  height: 250px;
+  width: 250px;
+  background: white;
+  border-radius: 25px;
 `;

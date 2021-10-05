@@ -20,6 +20,7 @@ const NavSide = () => {
   const [displayComponent, setDisplayComponent] = useRecoilState(
     atoms.displayComponent
   );
+
   const sideBarClick = () => {
     if (sideBarWidth === "200px") {
       setSideBarWidth("40px");
@@ -54,7 +55,14 @@ const NavSide = () => {
             setDisplayComponent("cardExpand");
           },
         },
-        { id: "1-1", title: "Component 2" },
+        {
+          id: "1-1",
+          title: "Carousel Row",
+          onClick: () => {
+            history.push("/");
+            setDisplayComponent("carouselRow");
+          },
+        },
       ],
       onClick: () => clickCat(1),
     },
