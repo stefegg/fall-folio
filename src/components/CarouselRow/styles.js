@@ -10,6 +10,7 @@ export const UpperRow = styled.div`
   flex-direction: row;
   align-items: center;
   margin-bottom: 8px;
+  color: ${({ theme }) => theme.text};
 `;
 
 export const LowerRow = styled.div`

@@ -6,6 +6,7 @@ export const Wrapper = styled.div`
   background: ${({ theme }) => theme.secondaryBg};
   padding: 20px;
   position: relative;
+  border-right: 1px solid ${({ theme }) => theme.border};
 `;
 
 export const Icon = styled.div`

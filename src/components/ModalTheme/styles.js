@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  height: 275px;
   width: 450px;
   background: ${({ theme }) => theme.secondaryBg};
   border-radius: 8px;
   position: relative;
+  border: ${({ theme }) => `1px solid ${theme.border}`};
 `;
 
 export const Header = styled.div`
@@ -28,8 +28,7 @@ export const Body = styled.div`
   background: ${({ theme }) => theme.primaryBg};
   display: flex;
   flex-direction: column;
-  height: 100%;
   align-items: center;
   justify-content: space-around;
-  padding: 20px 0px;
+  height: 200px;
 `;

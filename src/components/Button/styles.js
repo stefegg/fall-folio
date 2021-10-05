@@ -11,9 +11,11 @@ export const Wrapper = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
+  font: ${({ font }) => (font ? `${font} sans-serif` : "500 16px sans-serif")};
   cursor: ${({ disabled }) => (disabled ? "auto" : "pointer")};
   border: ${({ border }) => (border ? border : "none")};
   border-radius: ${({ borderRadius }) => (borderRadius ? borderRadius : "4px")};
+  padding: ${({ padding }) => (padding ? padding : "0px")};
   &:hover {
     opacity: 0.7;
   }

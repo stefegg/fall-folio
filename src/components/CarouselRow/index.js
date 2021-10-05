@@ -81,6 +81,8 @@ const CarouselRow = ({ data, title }) => {
             height={"32px"}
             borderRadius={"50px"}
             disabled={checkPrevDisabled()}
+            font={"400 14px"}
+            padding={"0px 0px 2px 0px"}
           />
           <Button
             text={">"}
@@ -89,6 +91,8 @@ const CarouselRow = ({ data, title }) => {
             height={"32px"}
             borderRadius={"50px"}
             disabled={checkNextDisabled()}
+            font={"400 14px"}
+            padding={"0px 0px 2px 0px"}
           />
         </ButtonWrapper>
       </UpperRow>

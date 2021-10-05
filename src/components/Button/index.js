@@ -12,6 +12,8 @@ const Button = ({
   disabled,
   border,
   borderRadius,
+  font,
+  padding,
 }) => {
   return (
     <Wrapper
@@ -23,6 +25,8 @@ const Button = ({
       disabled={disabled}
       border={border}
       borderRadius={borderRadius}
+      font={font}
+      padding={padding}
     >
       {text}
     </Wrapper>
