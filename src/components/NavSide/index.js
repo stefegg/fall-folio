@@ -63,6 +63,14 @@ const NavSide = () => {
             setDisplayComponent("carouselRow");
           },
         },
+        {
+          id: "1-2",
+          title: "Drag N Drop",
+          onClick: () => {
+            history.push("/");
+            setDisplayComponent("dragDrop");
+          },
+        },
       ],
       onClick: () => clickCat(1),
     },

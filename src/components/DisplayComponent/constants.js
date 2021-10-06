@@ -6,3 +6,8 @@ export const EXPAND_BODY =
 export const CAROUSEL_TITLE = "Carousel Row";
 
 export const CarouselData = [{}, {}, {}, {}, {}];
+
+export const DragDropData = [
+  { title: "Group 1", items: ["1", "2", "3"] },
+  { title: "Group 2", items: ["4", "5"] },
+];

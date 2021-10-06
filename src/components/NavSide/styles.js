@@ -39,6 +39,7 @@ export const CatExpand = styled.div`
   width: 100%;
   height: ${(props) =>
     props.expand === props.catId ? `${props.subLength * "20"}px` : "0px"};
+  padding-bottom: 2px;
   overflow: hidden;
   transition: height 0.5s;
 `;
