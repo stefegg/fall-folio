@@ -1,13 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Wrapper, Group, Item, ItemPara, GroupTitle } from "./styles";
 
-const data = [
-  { title: "Group 1", items: ["1", "2", "3"] },
-  { title: "Group 2", items: ["4", "5"] },
-  // { title: "Group 3", items: ["1", "2", "3"] },
-];
-
-const DragDrop = () => {
+const DragDrop = ({ data }) => {
   const [list, setList] = useState(data);
   const [dragging, setDragging] = useState(false);
   const dragItem = useRef();

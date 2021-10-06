@@ -9,6 +9,7 @@ import {
   EXPAND_TITLE,
   CAROUSEL_TITLE,
   CarouselData,
+  DragDropData,
 } from "./constants";
 
 const DisplayComponent = () => {
@@ -23,7 +24,7 @@ const DisplayComponent = () => {
       case "carouselRow":
         return <CarouselRow data={CarouselData} title={CAROUSEL_TITLE} />;
       case "dragDrop":
-        return <DragDrop />;
+        return <DragDrop data={DragDropData} />;
     }
   };
   return <Wrapper>{renderComponent(displayComponent)}</Wrapper>;
