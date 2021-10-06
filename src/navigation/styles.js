@@ -11,5 +11,6 @@ export const SideTrack = styled.div`
 `;
 
 export const PageTrack = styled.div`
-  width: ${(props) => `calc(100vw - ${props.sideBarWidth})`};
+  min-width: ${(props) => `calc(100vw - ${props.sideBarWidth})`};
+  transition: width, 0.5s;
 `;

@@ -7,6 +7,7 @@ import ModalTheme from "./ModalTheme";
 import Button from "./Button";
 import CarouselRow from "./CarouselRow";
 import CarouselCard from "./CarouselCard";
+import DragDrop from "./DragDrop";
 
 export {
   NavTop,
@@ -18,4 +19,5 @@ export {
   Button,
   CarouselRow,
   CarouselCard,
+  DragDrop,
 };

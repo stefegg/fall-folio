@@ -3,7 +3,7 @@ import { useTheme } from "styled-components";
 import { useRecoilState } from "recoil";
 import atoms from "../../atoms";
 import { Wrapper } from "./styles";
-import { CardExpand, CarouselRow } from "../index";
+import { CardExpand, CarouselRow, DragDrop } from "../index";
 import {
   EXPAND_BODY,
   EXPAND_TITLE,
@@ -22,6 +22,8 @@ const DisplayComponent = () => {
         return <CardExpand title={EXPAND_TITLE} body={EXPAND_BODY} />;
       case "carouselRow":
         return <CarouselRow data={CarouselData} title={CAROUSEL_TITLE} />;
+      case "dragDrop":
+        return <DragDrop />;
     }
   };
   return <Wrapper>{renderComponent(displayComponent)}</Wrapper>;
