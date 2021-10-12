@@ -74,6 +74,14 @@ const NavSide = () => {
       ],
       onClick: () => clickCat(1),
     },
+    {
+      id: 2,
+      title: "Larger Pieces",
+      subcategories: [
+        { id: "2-1", title: "Sign Up", onClick: () => history.push("/signup") },
+      ],
+      onClick: () => clickCat(2),
+    },
   ];
 
   return (
