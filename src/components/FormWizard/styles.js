@@ -1,13 +1,10 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  height: calc(100vh - 120px);
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  padding: 20px 15%;
-  padding-bottom: 0px;
-  background: #c9c9e9;
+  height: 100%;
+  width: 100%;
 `;
 
 export const ButtonWrapper = styled.div`

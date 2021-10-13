@@ -3,48 +3,63 @@ import { useTheme } from "styled-components";
 import { Wrapper, ButtonWrapper, DoubleInput } from "./styles";
 import { Button, InputField } from "../index";
 
-const FormWizard = ({ pages, borderColor, onSubmit, fields }) => {
-  const [page, setPage] = useState(1);
+const FormWizard = ({ pages, onSubmit }) => {
+  const [pageNum, setPageNum] = useState(1);
   const getText = () => {
-    if (pages && page !== pages) {
+    if (pages && pageNum !== pages.length) {
       return "Continue";
     } else return "Submit";
   };
   const clickPage = () => {
-    if (pages && page !== pages) {
-      setPage(page + 1);
-    } else onSubmit();
+    if (pages && pageNum !== pages.length) {
+      setPageNum(pageNum + 1);
+    } else console.log("done");
+  };
+  const generateInput = (page) => {
+    return page.fields.map((field, index) => {
+      switch (field.type) {
+        case "input":
+          return (
+            <InputField
+              label={field.title}
+              key={index}
+              borderColor={field.borderColor}
+              width={field.inputWidth}
+              value={field.value}
+              type={field.password ? "password" : "input"}
+            />
+          );
+        case "doubleInput":
+          return (
+            <DoubleInput key={index}>
+              <InputField
+                label={field.titleOne}
+                borderColor={field.borderColor}
+                key={field.indexOne}
+              />
+              <InputField
+                label={field.titleTwo}
+                borderColor={field.borderColor}
+                key={field.indexTwo}
+              />
+            </DoubleInput>
+          );
+      }
+    });
+  };
+  const generatePage = (pages) => {
+    return (
+      pages &&
+      pages.map((page) => {
+        if (page.page === pageNum) {
+          return generateInput(page);
+        }
+      })
+    );
   };
   return (
-    <Wrapper borderColor={borderColor}>
-      {fields &&
-        fields.map((field, index) => {
-          if (field.type === "input") {
-            return (
-              <InputField
-                label={field.title}
-                key={index}
-                borderColor={field.borderColor}
-                width={field.inputWidth}
-                value={field.value}
-              />
-            );
-          }
-          if (field.type === "doubleInput") {
-            return (
-              <DoubleInput>
-                <InputField
-                  label={field.titleOne}
-                  borderColor={field.borderColor}
-                />
-                <InputField
-                  label={field.titleTwo}
-                  borderColor={field.borderColor}
-                />
-              </DoubleInput>
-            );
-          }
-        })}
+    <Wrapper>
+      {generatePage(pages)}
       <ButtonWrapper>
         <Button width={"100%"} text={getText()} onClick={() => clickPage()} />
       </ButtonWrapper>
