@@ -36,19 +36,19 @@ const FormWizard = ({ data, formik }) => {
     });
   };
 
-  const checkDisabled = () => {
-    if (
-      Object.keys(formik.errors).length <=
-        pageField - Object.keys(formik.errors).length &&
-      Object.values(formik.values)[0].length
-      // Object.values(formik.values)[Object.values(formik.values.length) + 1]
-      //   .length
+  // const checkDisabled = () => {
+  //   if (
+  //     Object.keys(formik.errors).length <=
+  //       pageField - Object.keys(formik.errors).length &&
+  //     Object.values(formik.values)[0].length
+  //     // Object.values(formik.values)[Object.values(formik.values.length) + 1]
+  //     //   .length
 
-      // && Object.value(formik.values[Object.keys(formik.values)])
-    ) {
-      return false;
-    } else return true;
-  };
+  //     // && Object.value(formik.values[Object.keys(formik.values)])
+  //   ) {
+  //     return false;
+  //   } else return true;
+  // };
 
   const checkDoubles = (fields) => {
     let count = data[pageNum - 1].fields.length;
@@ -111,11 +111,11 @@ const FormWizard = ({ data, formik }) => {
       })
     );
   };
-  console.log(
-    // formik.values,
-    Object.values(formik.values)[0],
-    "page-----"
-  );
+  // console.log(
+  //   // formik.values,
+  //   Object.values(formik.values)[0],
+  //   "page-----"
+  // );
   return (
     <Wrapper>
       {generateContent("headers", data)}
@@ -125,7 +125,7 @@ const FormWizard = ({ data, formik }) => {
           width={"100%"}
           text={getText()}
           onClick={() => clickPage()}
-          disabled={checkDisabled()}
+          // disabled={checkDisabled()}
           // disabled={disabled}
         />
       </ButtonWrapper>
