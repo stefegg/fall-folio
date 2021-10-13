@@ -12,6 +12,7 @@ export const ButtonWrapper = styled.div`
   justify-content: center;
   width: 100%;
   margin-top: 20px;
+  padding-bottom: 40px;
 `;
 
 export const DoubleInput = styled.div`

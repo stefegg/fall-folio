@@ -9,9 +9,15 @@ const InputField = ({
   borderColor,
   type,
   onBlur,
+  onChange,
+  value,
 }) => {
   const [focused, setFocused] = useState(false);
-  console.log(error, "------e");
+  const setBlur = (e) => {
+    onBlur(e);
+    setFocused(false);
+  };
+  // console.log(value, "-----v");
   return (
     <Wrapper>
       {label && <Label>{label}</Label>}
@@ -20,12 +26,13 @@ const InputField = ({
           inputHeight={inputHeight}
           inputWidth={inputWidth}
           onFocus={() => setFocused(true)}
-          onBlur={onBlur}
-          // onBlur={() => setFocused(false)}
+          onBlur={(e) => setBlur(e, onBlur)}
           type={type ? type : "text"}
+          onChange={onChange}
+          value={value}
         />
       </InputWrapper>
-      {error && <ErrorText>{error}</ErrorText>}
+      <ErrorText>{error ? error : null}</ErrorText>
     </Wrapper>
   );
 };

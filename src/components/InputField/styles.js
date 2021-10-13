@@ -13,7 +13,9 @@ export const Label = styled.span`
 
 export const ErrorText = styled.span`
   color: red;
-  margin-top: 6px;
+  margin-top: 4px;
+  font-size: 10px;
+  height: 10px;
 `;
 
 export const InputWrapper = styled.div`

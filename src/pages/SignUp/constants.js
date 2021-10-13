@@ -10,7 +10,7 @@ export const validationSchema = Yup.object().shape({
 export const data = [
   {
     page: 1,
-    fields: [
+    headers: [
       {
         type: "header",
         title: "Please enter your e-mail address and choose a password",
@@ -19,6 +19,8 @@ export const data = [
         type: "subHeader",
         title: "Passwords must be at least 8 characters and match",
       },
+    ],
+    fields: [
       {
         type: "input",
         title: "E-mail",
@@ -43,11 +45,13 @@ export const data = [
   },
   {
     page: 2,
-    fields: [
+    headers: [
       {
         type: "header",
         title: "Please enter your name and address",
       },
+    ],
+    fields: [
       {
         type: "input",
         title: "First Name",

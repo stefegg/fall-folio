@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { useTheme } from "styled-components";
 import {
   Header,
   SubHeader,
@@ -11,7 +10,10 @@ import { Button, InputField } from "../index";
 
 const FormWizard = ({ data, formik }) => {
   const [pageNum, setPageNum] = useState(1);
-
+  const [pageField, setPageField] = useState(data[pageNum - 1].fields.length);
+  useEffect(() => {
+    checkDoubles(data[pageNum - 1].fields);
+  }, [pageNum]);
   const getText = () => {
     if (data && pageNum !== data.length) {
       return "Continue";
@@ -22,13 +24,46 @@ const FormWizard = ({ data, formik }) => {
       setPageNum(pageNum + 1);
     } else console.log("done");
   };
+
+  const generateHeaders = (page) => {
+    return page.headers.map((header, index) => {
+      switch (header.type) {
+        case "header":
+          return <Header key={index}>{header.title}</Header>;
+        case "subHeader":
+          return <SubHeader key={index}>{header.title}</SubHeader>;
+      }
+    });
+  };
+
+  const checkDisabled = () => {
+    if (
+      Object.keys(formik.errors).length <=
+        pageField - Object.keys(formik.errors).length &&
+      Object.values(formik.values)[0].length
+      // Object.values(formik.values)[Object.values(formik.values.length) + 1]
+      //   .length
+
+      // && Object.value(formik.values[Object.keys(formik.values)])
+    ) {
+      return false;
+    } else return true;
+  };
+
+  const checkDoubles = (fields) => {
+    let count = data[pageNum - 1].fields.length;
+    fields.map((field, index) => {
+      let value = Object.values(field);
+      if (value.includes("doubleInput")) {
+        count = count + 1;
+      }
+      setPageField(count);
+    });
+  };
+
   const generateInput = (page) => {
     return page.fields.map((field, index) => {
       switch (field.type) {
-        case "header":
-          return <Header>{field.title}</Header>;
-        case "subHeader":
-          return <SubHeader>{field.title}</SubHeader>;
         case "input":
           return (
             <InputField
@@ -36,7 +71,8 @@ const FormWizard = ({ data, formik }) => {
               key={index}
               borderColor={field.borderColor}
               width={field.inputWidth}
-              value={formik[`${field.value}`]}
+              value={formik.values[`${field.value}`]}
+              onChange={formik.handleChange(`${field.value}`)}
               type={field.password ? "password" : "input"}
               error={
                 formik.touched[`${field.value}`] &&
@@ -63,21 +99,35 @@ const FormWizard = ({ data, formik }) => {
       }
     });
   };
-  const generatePage = (data) => {
+  const generateContent = (type, data) => {
     return (
       data &&
       data.map((page) => {
-        if (page.page === pageNum) {
+        if (page.page === pageNum && type === "headers") {
+          return generateHeaders(page);
+        } else if (page.page === pageNum && type === "inputs") {
           return generateInput(page);
         }
       })
     );
   };
+  console.log(
+    // formik.values,
+    Object.values(formik.values)[0],
+    "page-----"
+  );
   return (
     <Wrapper>
-      {generatePage(data)}
+      {generateContent("headers", data)}
+      {generateContent("inputs", data)}
       <ButtonWrapper>
-        <Button width={"100%"} text={getText()} onClick={() => clickPage()} />
+        <Button
+          width={"100%"}
+          text={getText()}
+          onClick={() => clickPage()}
+          disabled={checkDisabled()}
+          // disabled={disabled}
+        />
       </ButtonWrapper>
     </Wrapper>
   );
