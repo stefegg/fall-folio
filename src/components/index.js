@@ -8,6 +8,8 @@ import Button from "./Button";
 import CarouselRow from "./CarouselRow";
 import CarouselCard from "./CarouselCard";
 import DragDrop from "./DragDrop";
+import FormWizard from "./FormWizard";
+import InputField from "./InputField";
 
 export {
   NavTop,
@@ -20,4 +22,6 @@ export {
   CarouselRow,
   CarouselCard,
   DragDrop,
+  FormWizard,
+  InputField,
 };
