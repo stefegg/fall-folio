@@ -8,8 +8,10 @@ const InputField = ({
   inputWidth,
   borderColor,
   type,
+  onBlur,
 }) => {
   const [focused, setFocused] = useState(false);
+  console.log(error, "------e");
   return (
     <Wrapper>
       {label && <Label>{label}</Label>}
@@ -18,7 +20,8 @@ const InputField = ({
           inputHeight={inputHeight}
           inputWidth={inputWidth}
           onFocus={() => setFocused(true)}
-          onBlur={() => setFocused(false)}
+          onBlur={onBlur}
+          // onBlur={() => setFocused(false)}
           type={type ? type : "text"}
         />
       </InputWrapper>

@@ -1,7 +1,24 @@
-export const pages = [
+import * as Yup from "yup";
+
+export const validationSchema = Yup.object().shape({
+  email: Yup.string().email().required("Email Required"),
+  password: Yup.string().required("Password is required"),
+  repeatPassword: Yup.string().required("Repeat Password is required"),
+  firstName: Yup.string().required("First name required"),
+});
+
+export const data = [
   {
     page: 1,
     fields: [
+      {
+        type: "header",
+        title: "Please enter your e-mail address and choose a password",
+      },
+      {
+        type: "subHeader",
+        title: "Passwords must be at least 8 characters and match",
+      },
       {
         type: "input",
         title: "E-mail",
@@ -27,6 +44,10 @@ export const pages = [
   {
     page: 2,
     fields: [
+      {
+        type: "header",
+        title: "Please enter your name and address",
+      },
       {
         type: "input",
         title: "First Name",

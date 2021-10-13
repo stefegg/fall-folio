@@ -1,23 +1,34 @@
 import React, { useEffect, useState } from "react";
 import { useTheme } from "styled-components";
-import { Wrapper, ButtonWrapper, DoubleInput } from "./styles";
+import {
+  Header,
+  SubHeader,
+  Wrapper,
+  ButtonWrapper,
+  DoubleInput,
+} from "./styles";
 import { Button, InputField } from "../index";
 
-const FormWizard = ({ pages, onSubmit }) => {
+const FormWizard = ({ data, formik }) => {
   const [pageNum, setPageNum] = useState(1);
+
   const getText = () => {
-    if (pages && pageNum !== pages.length) {
+    if (data && pageNum !== data.length) {
       return "Continue";
     } else return "Submit";
   };
   const clickPage = () => {
-    if (pages && pageNum !== pages.length) {
+    if (data && pageNum !== data.length) {
       setPageNum(pageNum + 1);
     } else console.log("done");
   };
   const generateInput = (page) => {
     return page.fields.map((field, index) => {
       switch (field.type) {
+        case "header":
+          return <Header>{field.title}</Header>;
+        case "subHeader":
+          return <SubHeader>{field.title}</SubHeader>;
         case "input":
           return (
             <InputField
@@ -25,8 +36,13 @@ const FormWizard = ({ pages, onSubmit }) => {
               key={index}
               borderColor={field.borderColor}
               width={field.inputWidth}
-              value={field.value}
+              value={formik[`${field.value}`]}
               type={field.password ? "password" : "input"}
+              error={
+                formik.touched[`${field.value}`] &&
+                formik.errors[`${field.value}`]
+              }
+              onBlur={formik.handleBlur(`${field.value}`)}
             />
           );
         case "doubleInput":
@@ -47,10 +63,10 @@ const FormWizard = ({ pages, onSubmit }) => {
       }
     });
   };
-  const generatePage = (pages) => {
+  const generatePage = (data) => {
     return (
-      pages &&
-      pages.map((page) => {
+      data &&
+      data.map((page) => {
         if (page.page === pageNum) {
           return generateInput(page);
         }
@@ -59,7 +75,7 @@ const FormWizard = ({ pages, onSubmit }) => {
   };
   return (
     <Wrapper>
-      {generatePage(pages)}
+      {generatePage(data)}
       <ButtonWrapper>
         <Button width={"100%"} text={getText()} onClick={() => clickPage()} />
       </ButtonWrapper>

@@ -20,3 +20,12 @@ export const DoubleInput = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
 `;
+
+export const Header = styled.h1`
+  font-size: 20px;
+`;
+
+export const SubHeader = styled.h2`
+  font-size: 18px;
+  font-weight: 400;
+`;
